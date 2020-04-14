@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="styles/main.css">
+    <title> Money Management Survey </title>
+  </head>
+  <body>
+    <header>
+        <h1 id="title"> Money Management Survey</h1>
+        <p id="description"> A short survey about your financial acuity </p>
+    </header>
+    <main>
+        <div class="container">
+            <!-- The Form -->
+            <form action="sendDataHere.txt" action="POST" id="survey-form">
+                <!-- DropDown-chose -->
+                <div id="dropdown-widget">
+                    <label for="dropdown" id="gender-label" class="widget-label"> Gender</label>
+                    <select name="gender" id="dropdown" class="form-control">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <optgroup label="Other">
+                        <option value="agender">Agender</option>
+                        <option value="bigender">Bigender</option>
+                        <option value="cisgender">Cisgender</option>
+                        <option value="transgender">Transgender</option>
+                        <option value="two-spirit">Two-Spirit</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <!-- Ask for name -->
+                <div id="name-widget">
+                    <label for="name" id="name-label" class="widget-label">Name</label>
+                    <input 
+                    type="text" 
+                    name="user_name" 
+                    id="name" 
+                    placeholder="Enter your name" 
+                    class="form-control"
+                    required >
+                </div>
+
+                <!-- Ask for age -->
+                <div id="age-widget">
+                    <label for="number" id="number-label" class="widget-label">Age</label>
+                    <input 
+                    type="number" 
+                    name="user_age" 
+                    id="number" 
+                    placeholder="Enter your age" 
+                    min="5" 
+                    max="100" 
+                    class="form-control"
+                    required>
+                </div>
+
+                <!-- Ask for email -->
+                <div id="email-widget">
+                    <label for="email" id="email-label" class="widget-label">Email</label>
+                    <input 
+                    type="email" 
+                    name="user_email" 
+                    id="email" 
+                    placeholder="Enter your email" 
+                    class="form-control"
+                    required>
+                </div>
+
+                <!-- ===============================
+                Radio Buttons  -->
+                <fieldset id="money-management-widget">
+                    <legend class="widget-label">
+                        What is the level of your knowledge about money management?
+                        <span class="sub-legend"> (choose one)</span>
+                    </legend>
+                    <hr>
+                        <div>
+                        <!-- Chose: none -->
+                        <input 
+                        type="radio" 
+                        name="money-management" 
+                        id="none" 
+                        value="none"
+                        class="input-radio"/>
+                        <label for="none">None</label>
+                        </div>
+
+                        <div> 
+                        <!-- Chose: poor -->
+                            <input type="radio" name="money-management" id="poor" value="poor">
+                            <label for="poor"> Poor</label>
+                        </div>
+                        
+                        <div> 
+                            <!-- Chose: good -->
+                            <input type="radio" name="money-management" id="good" value="good ">
+                            <label for="good "> Good </label>
+                        </div>
+                        
+                        <div> 
+                            <!-- Chose: excellent -->
+                            <input type="radio" name="money-management" id="excellent" value="excellent">
+                            <label for="excellent"> Excellent </label>
+                        </div>
+                </fieldset> 
+
+                
+                <!-- ==============================
+                    Checkboxes - Financial Topics  -->
+                <fieldset id="financial-topics-widget">
+                    <legend class="widget-label">
+                        What financial topics would you like information on? 
+                        <span class="sub-legend">(choose one or more)</span>
+                    </legend>
+                    <hr>
+                    <div>
+                        <!-- Budgeting -->
+                        <label for="budgeting" class="checkbox-container">
+                        <input type="checkbox" id="budgeting" name="budgeting" value="budgeting">
+                        Budgeting
+                        </label>
+                    </div>
+                
+                    <div>
+                        <!-- Credit -->
+                        <label for="credit" class="checkbox-container">
+                        <input type="checkbox" id="credit" name="credit" value="credit">
+                        Credit
+                        </label>        
+                    </div>
+                    <!-- Investing-->
+                    <div>
+                        <label for="investing" class="checkbox-container">
+                        <input type="checkbox" id="investing" name="investing" value="investing">
+                        Investing
+                        </label>      
+                    </div>
+                    <!-- Insurance -->
+                    <div>
+                        <label for="insurance" class="checkbox-container">
+                        <input type="checkbox" id="insurance" name="insurance" value="insurance">
+                        Insurance 
+                        </label>
+                    </div>
+                    <!-- Debt Reduction -->
+                    <div>
+                        <label for="debt-reduction" class="checkbox-container">
+                        <input type="checkbox" id="debt-reduction" name="debt-reduction" value="debt-reduction">Debt-Reduction</label>
+                    </div>
+                    <!-- Saving -->
+                    <div>
+                        <label for="saving" class="checkbox-container">
+                        <input type="checkbox" id="saving" name="saving" value="saving">Saving
+                        </label>
+                    </div>
+                    <!-- Other-->
+                    <div>
+                        <input type="checkbox" id="other-input" name="other" value="other">
+                        <label for="other-input">Other (please specify)</label>
+                        <input 
+                        type="text" 
+                        id="other-user-input" 
+                        name="other-user-input" 
+                        placeholder="Enter here"
+                        class="form-control"
+                        style="margin-top:1em;">
+                    </div>
+                    
+                </fieldset>
+
+                <!-- User Comments -->
+                <div id="user-widget">
+                    <label for="comments" class="widget-label">Any Comments or Suggestions? </label>
+                    <textarea name="user_comments" id="comments" cols="30" rows="10" wrap>Enter your comments here...</textarea>
+                </div>
+                <!-- Submit Data -->
+                <div id="submit-widget">
+                    <button type="submit" id="submit"> Submit</button>
+                </div>
+            </form> <!-- close form -->
+        </div> <!-- close container-->
+    </main> <!-- close main-->
+    
+    <footer>
+            <p> Ali Linares &copy 2020 </p>
+    </footer>
+            <!-- javascripts -->
+            <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
+            <script src="https://kit.fontawesome.com/ec13c00532.js" crossorigin="anonymous"></script> 
+  </body>
+</html>
